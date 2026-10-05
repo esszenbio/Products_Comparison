@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESSZENBIO 降維打擊視覺簡報 (動態折扣實戰版)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #0f172a; color: #f8fafc; padding-bottom: 80px; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem; }
+        .text-gold { color: #fbbf24; }
+        .bg-gold { background-color: #fbbf24; }
+        .bg-red-alert { background-color: #ef4444; }
+        .bg-gray-competitor { background-color: #64748b; }
+        
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-slide-in { animation: slideIn 0.6s ease-out forwards; }
+        
+        .bar-container { width: 100%; height: 28px; background: rgba(0,0,0,0.3); border-radius: 14px; overflow: hidden; position: relative; margin-top: 8px; }
+        .bar-fill { height: 100%; border-radius: 14px; display: flex; align-items: center; padding-left: 16px; font-weight: bold; font-size: 0.95rem; transition: width 0.5s ease-in-out; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto">
+        
+        <!-- 首頁：科學定錨與核心戰略 -->
+        <div class="glass-card rounded-3xl p-8 animate-slide-in">
+            <h1 class="text-3xl md:text-5xl font-black text-center mb-6">👑 ESSZENBIO 科學護膚</h1>
+            <h2 class="text-xl md:text-2xl text-center text-gold font-bold mb-8">拒絕化學監禁，開啟純原萃 (Booster) 革命</h2>
+            
+            <div class="bg-slate-800 rounded-2xl p-6 border-l-4 border-gold">
+                <h3 class="text-xl font-bold mb-4 text-white">🧪 為什麼我們堅持「分離包裝」與「手動微乳化」？</h3>
+                <ul class="space-y-3 text-lg text-slate-300">
+                    <li>✓ <strong>拒絕化學傷害：</strong>傳統保養品為追求穩定，常添加高濃度界面劑 (Surfactants)，導致活性分子降解並削弱屏障。</li>
+                    <li>✓ <strong>仿生皮脂膜：</strong>我們將水相 [源] 與油相 [潤] 獨立裝瓶。掌心 1:1 混合並利用體溫摩擦，瞬間形成包裹親水與親脂活性的「微乳液」。</li>
+                    <li>✓ <strong>突破 500 Da 屏障：</strong>角質層的物理屏障閾值為 500 道爾頓。仿生載體能保護微分子胜肽無阻礙直送真皮層。</li>
+                    <li>✓ <strong>告別買水迷思：</strong>專櫃精華多半是預混好的「含水配方」。我們提供高純度靶向活性精華 (Booster)，實現 1+1+1 > 3 的生物利用率。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 組合 A -->
+        <div class="glass-card rounded-3xl p-8 animate-slide-in" style="animation-delay: 0.1s;">
+            <div class="flex justify-between items-end mb-6 border-b border-slate-600 pb-4">
+                <div>
+                    <h2 class="text-3xl font-black text-white">🅰️ 組合 A：基礎修護發光組</h2>
+                    <p class="text-lg text-slate-400 mt-2">【源+潤+丰】 ｜ 瞬間柔軟角質，結構性修護</p>
+                </div>
+                <div class="text-right price-block" data-base="9340">
+                    <p class="text-lg text-slate-400 line-through mb-1">原價 $<span class="display-base">9,340</span></p>
+                    <span class="text-gold font-black text-4xl display-new">$8,220</span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <p class="text-sm text-slate-400 mb-2 font-bold">🧪 有效容量 (純 Booster vs. 含水精華)</p>
+                <div class="bar-container"><div class="bar-fill bg-gray-competitor" style="width: 66%;">法國 嬌X (含水雙導) 50ml</div></div>
+                <div class="bar-container"><div class="bar-fill bg-gold text-black" style="width: 100%;">ESSZENBIO (純原萃) 75ml</div></div>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-sm text-slate-400 mb-2 font-bold">💰 專櫃售價 (品牌溢價 vs. 生技價值)</p>
+                <div class="bar-container"><div class="bar-fill bg-red-alert" style="width: 100%;">法國 嬌X $8,350</div></div>
+                <div class="bar-container bar-price-block" data-base="9340"><div class="bar-fill bg-gold text-black" style="width: 98%;">ESSZENBIO 優惠價 $<span class="bar-display-new">8,220</span></div></div>
+            </div>
+
+            <div class="bg-slate-800 rounded-xl p-5">
+                <h4 class="font-bold text-gold mb-2">⚔️ 科學降維打擊</h4>
+                <ul class="text-slate-300 space-y-2">
+                    <li>✓ 專櫃雙管精華無法依季節改變油水比例。[源] 微分子玻尿酸與 [潤] 神經醯胺能精準客製您的仿生皮脂膜。</li>
+                    <li>✓ [丰] 採用專利水解蜂王漿胜肽，透過定向酵解技術徹底瓦解過敏原 (<3.5kDa)。</li>
+                    <li>✓ 微分子胺基酸集中於 500 Da 吸收巔峰，促進角質細胞緊密連接，修護疲憊肌膚。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 組合 B -->
+        <div class="glass-card rounded-3xl p-8 animate-slide-in" style="animation-delay: 0.2s;">
+            <div class="flex justify-between items-end mb-6 border-b border-slate-600 pb-4">
+                <div>
+                    <h2 class="text-3xl font-black text-white">🅱️ 組合 B：逆齡撫紋組</h2>
+                    <p class="text-lg text-slate-400 mt-2">【源+潤+炁】 ｜ 喚醒鮮活感，深度撫平細紋</p>
+                </div>
+                <div class="text-right price-block" data-base="9340">
+                    <p class="text-lg text-slate-400 line-through mb-1">原價 $<span class="display-base">9,340</span></p>
+                    <span class="text-gold font-black text-4xl display-new">$8,220</span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <p class="text-sm text-slate-400 mb-2 font-bold">🧪 有效容量 (純 Booster vs. 含水精華)</p>
+                <div class="bar-container"><div class="bar-fill bg-gray-competitor" style="width: 66%;">韓國 雪X秀 (預混配方) 50ml</div></div>
+                <div class="bar-container"><div class="bar-fill bg-gold text-black" style="width: 100%;">ESSZENBIO (純原萃) 75ml</div></div>
+            </div>
+            
+            <div class="mb-8">
+                <p class="text-sm text-slate-400 mb-2 font-bold">💰 專櫃售價 (品牌溢價 vs. 生技價值)</p>
+                <div class="bar-container"><div class="bar-fill bg-red-alert" style="width: 100%;">韓國 雪X秀 $6,200</div></div>
+                <div class="bar-container bar-price-block" data-base="9340"><div class="bar-fill bg-gold text-black" style="width: 98%;">ESSZENBIO 優惠價 $<span class="bar-display-new">8,220</span></div></div>
+            </div>
+
+            <div class="bg-slate-800 rounded-xl p-5 mt-6">
+                <h4 class="font-bold text-gold mb-2">⚔️ 科學降維打擊</h4>
+                <ul class="text-slate-300 space-y-2">
+                    <li>✓ 韓國大牌主打人參微囊科技單瓶破六千。我們透過水解轉換生成最高生物利用率的 CK 胜肽。</li>
+                    <li>✓ 人參微分子降至 622 Da，具備強大親脂性，協同專利五胜肽深度撫紋。</li>
+                    <li>✓ 利用物理掌溫微乳化，避免化學界面劑使抗老成分揮發降解，將活性牢牢鎖在肌底。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 組合 C -->
+        <div class="glass-card rounded-3xl p-8 animate-slide-in" style="animation-delay: 0.3s;">
+            <div class="flex justify-between items-end mb-6 border-b border-slate-600 pb-4">
+                <div>
+                    <h2 class="text-3xl font-black text-white">🅲 組合 C：淨白淡斑組</h2>
+                    <p class="text-lg text-slate-400 mt-2">【源+潤+澤】 ｜ 穩定黑色素，淨白導航修護</p>
+                </div>
+                <div class="text-right price-block" data-base="9340">
+                    <p class="text-lg text-slate-400 line-through mb-1">原價 $<span class="display-base">9,340</span></p>
+                    <span class="text-gold font-black text-4xl display-new">$8,220</span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <p class="text-sm text-slate-400 mb-2 font-bold">🧪 有效容量 (純 Booster vs. 含水精華)</p>
+                <div class="bar-container"><div class="bar-fill bg-gray-competitor" style="width: 66%;">日本 S X I (含水精華) 50ml</div></div>
+                <div class="bar-container"><div class="bar-fill bg-gold text-black" style="width: 100%;">ESSZENBIO (純原萃) 75ml</div></div>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-sm text-slate-400 mb-2 font-bold">💰 專櫃售價 (品牌溢價 vs. 生技價值)</p>
+                <div class="bar-container"><div class="bar-fill bg-red-alert" style="width: 88%;">日本 S X I $7,290</div></div>
+                <div class="bar-container bar-price-block" data-base="9340"><div class="bar-fill bg-gold text-black" style="width: 100%;">ESSZENBIO 優惠價 $<span class="bar-display-new">8,220</span></div></div>
+            </div>
+
+            <div class="bg-slate-800 rounded-xl p-5">
+                <h4 class="font-bold text-gold mb-2">⚔️ 科學降維打擊</h4>
+                <ul class="text-slate-300 space-y-2">
+                    <li>✓ 專櫃為求速效常使肌膚變乾變薄。我們用 [源+潤] 柔軟角質建構屏障，在保濕基礎上淨白。</li>
+                    <li>✓ [澤] 不僅含有法規核可的高效「傳明酸」穩定黑色素，更結合「蜂王漿萃取精華」重建修護力。</li>
+                    <li>✓ 雙管齊下且不含去脂性界面劑，讓敏感肌也能安心天天使用，養出透亮燈泡肌。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 組合 D -->
+        <div class="glass-card rounded-3xl p-8 animate-slide-in" style="animation-delay: 0.4s;">
+            <div class="flex justify-between items-end mb-6 border-b border-slate-600 pb-4">
+                <div>
+                    <h2 class="text-3xl font-black text-white">🅳 組合 D：水潤提亮組</h2>
+                    <p class="text-lg text-slate-400 mt-2">【源+潤+蘊】 ｜ 沙棘深度滋補，琥珀級鎖水</p>
+                </div>
+                <div class="text-right price-block" data-base="8040">
+                    <p class="text-lg text-slate-400 line-through mb-1">原價 $<span class="display-base">8,040</span></p>
+                    <span class="text-gold font-black text-4xl display-new">$7,070</span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <p class="text-sm text-slate-400 mb-2 font-bold">🧪 有效容量 (純脂質 Booster vs. 專櫃保養油)</p>
+                <div class="bar-container"><div class="bar-fill bg-gray-competitor" style="width: 40%;">法國 海X娜 (精華油) 30ml</div></div>
+                <div class="bar-container"><div class="bar-fill bg-gold text-black" style="width: 100%;">ESSZENBIO (純原萃) 75ml</div></div>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-sm text-slate-400 mb-2 font-bold">💰 專櫃售價 (品牌溢價 vs. 生技價值)</p>
+                <div class="bar-container"><div class="bar-fill bg-red-alert" style="width: 100%;">法國 海X娜 $12,500</div></div>
+                <div class="bar-container bar-price-block" data-base="8040"><div class="bar-fill bg-gold text-black" style="width: 56%;">ESSZENBIO 優惠價 $<span class="bar-display-new">7,070</span></div></div>
+            </div>
+
+            <div class="bg-slate-800 rounded-xl p-5">
+                <h4 class="font-bold text-gold mb-2">⚔️ 科學降維打擊</h4>
+                <ul class="text-slate-300 space-y-2">
+                    <li>✓ [蘊] 堅持非水解全果沙棘萃取，完整保留天然符合滲透基因的微小成分。</li>
+                    <li>✓ 內含 176 Da 維生素C 高效防禦環境壓力，Omega-7 提供極乾沙漠肌深度脂質補給。</li>
+                    <li>✓ 不到頂級專櫃油 6 成價格，享受植物固醇加神經醯胺的極限鎖水與複合修護。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 組合 E -->
+        <div class="glass-card rounded-3xl p-8 animate-slide-in" style="animation-delay: 0.5s;">
+            <div class="flex justify-between items-end mb-6 border-b border-slate-600 pb-4">
+                <div>
+                    <h2 class="text-3xl font-black text-white">🅴 組合 E：極緻澎彈撫紋組</h2>
+                    <p class="text-lg text-slate-400 mt-2">【源+潤+丰+炁】 ｜ 雙頂級引擎，抗老天花板</p>
+                </div>
+                <div class="text-right price-block" data-base="13320">
+                    <p class="text-lg text-slate-400 line-through mb-1">原價 $<span class="display-base">13,320</span></p>
+                    <span class="text-gold font-black text-4xl display-new">$11,720</span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <p class="text-sm text-slate-400 mb-2 font-bold">🧪 有效容量 (純 Booster vs. 含水精華)</p>
+                <div class="bar-container"><div class="bar-fill bg-gray-competitor" style="width: 33%;">法國 蘭X (絕對完美) 30ml</div></div>
+                <div class="bar-container"><div class="bar-fill bg-gold text-black" style="width: 100%;">ESSZENBIO (純原萃) 90ml</div></div>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-sm text-slate-400 mb-2 font-bold">💰 專櫃售價 (品牌溢價 vs. 生技價值)</p>
+                <div class="bar-container"><div class="bar-fill bg-red-alert" style="width: 98%;">法國 蘭X $11,500</div></div>
+                <div class="bar-container bar-price-block" data-base="13320"><div class="bar-fill bg-gold text-black" style="width: 100%;">ESSZENBIO 優惠價 $<span class="bar-display-new">11,720</span></div></div>
+            </div>
+
+            <div class="bg-slate-800 rounded-xl p-5">
+                <h4 class="font-bold text-gold mb-2">⚔️ 科學降維打擊</h4>
+                <ul class="text-slate-300 space-y-2">
+                    <li>✓ 專櫃頂級抗老線單瓶 30ml 破萬，我們給出「蜂王漿 [丰] + 人參胜肽 [炁]」超級雙引擎共 90ml。</li>
+                    <li>✓ 蜂王漿中和氧化壓力修護細胞，人參微分子胜肽 (CK, 622 Da) 協同五胜肽強效撫平細紋。</li>
+                    <li>✓ 利用掌溫物理微乳化避開化學降解，讓雙頂級抗老成分無阻礙直達真皮層，全方位解決鬆垮。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 組合 F -->
+        <div class="glass-card rounded-3xl p-8 animate-slide-in" style="animation-delay: 0.6s;">
+            <div class="flex justify-between items-end mb-6 border-b border-slate-600 pb-4">
+                <div>
+                    <h2 class="text-3xl font-black text-white">🅵 組合 F：光采無暇淨白組</h2>
+                    <p class="text-lg text-slate-400 mt-2">【源+潤+丰+澤】 ｜ 貴婦級高定，先修護再褪黑</p>
+                </div>
+                <div class="text-right price-block" data-base="13320">
+                    <p class="text-lg text-slate-400 line-through mb-1">原價 $<span class="display-base">13,320</span></p>
+                    <span class="text-gold font-black text-4xl display-new">$11,720</span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <p class="text-sm text-slate-400 mb-2 font-bold">🧪 有效容量 (純 Booster vs. 含水精華)</p>
+                <div class="bar-container"><div class="bar-fill bg-gray-competitor" style="width: 33%;">法國 迪X (精萃再生) 30ml</div></div>
+                <div class="bar-container"><div class="bar-fill bg-gold text-black" style="width: 100%;">ESSZENBIO (純原萃) 90ml</div></div>
+            </div>
+
+            <div class="mb-8">
+                <p class="text-sm text-slate-400 mb-2 font-bold">💰 專櫃售價 (品牌溢價 vs. 生技價值)</p>
+                <div class="bar-container"><div class="bar-fill bg-red-alert" style="width: 100%;">法國 迪X $13,500</div></div>
+                <div class="bar-container bar-price-block" data-base="13320"><div class="bar-fill bg-gold text-black" style="width: 86%;">ESSZENBIO 優惠價 $<span class="bar-display-new">11,720</span></div></div>
+            </div>
+
+            <div class="bg-slate-800 rounded-xl p-5">
+                <h4 class="font-bold text-gold mb-2">⚔ 科學降維打擊</h4>
+                <ul class="text-slate-300 space-y-2">
+                    <li>✓ 比照貴婦品牌最高規格淨白邏輯：先用 [丰] 蜂王漿舒緩疲憊發炎，再用 [澤] 進行深度褪黑。</li>
+                    <li>✓ [澤] 蘊含「傳明酸」與「水解蜂王漿精華」雙效重建，淡斑同時救回健康氣色。</li>
+                    <li>✓ 拒絕化學介面活性劑，透過微乳液載體強強聯手，讓肌膚不只白，更透出健康的貴婦光澤。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 組合 G -->
+        <div class="glass-card rounded-3xl p-8 animate-slide-in" style="animation-delay: 0.7s;">
+            <div class="flex justify-between items-end mb-6 border-b border-slate-600 pb-4">
+                <div>
+                    <h2 class="text-3xl font-black text-white">🅶 組合 G：活萃精華組</h2>
+                    <p class="text-lg text-slate-400 mt-2">【丰+炁+澤+蘊】 ｜ 純 Booster，生技高定實驗室</p>
+                </div>
+                <div class="text-right price-block" data-base="14620">
+                    <p class="text-lg text-slate-400 line-through mb-1">原價 $<span class="display-base">14,620</span></p>
+                    <span class="text-gold font-black text-4xl display-new">$12,860</span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <p class="text-sm text-slate-400 mb-2 font-bold">🧪 活性純度 (高濃度靶向精華 vs. 傳統預混)</p>
+                <div class="bar-container"><div class="bar-fill bg-gray-competitor" style="width: 50%;">瑞士/美國 頂級安瓶療程 30ml</div></div>
+                <div class="bar-container"><div class="bar-fill bg-gold text-black" style="width: 100%;">ESSZENBIO 活萃精華 (4支) 60ml</div></div>
+            </div>
+
+            <div class="bg-slate-800 rounded-xl p-5 mt-6">
+                <h4 class="font-bold text-gold mb-2">⚔️ 科學降維打擊</h4>
+                <ul class="text-slate-300 space-y-2">
+                    <li>✓ 這是一組沒有 [源+潤] 的純濃縮精華 (Booster) 套組，完全對標醫美與頂級貴婦的安瓶療程。</li>
+                    <li>✓ 包含蜂王漿、人參胜肽、傳明酸、沙棘果油四支高純度原萃，等於買下一座個人高定成分庫。</li>
+                    <li>✓ 隨時滴入您慣用的乳霜中，不受化學乳化劑與預混比例監禁，實現真正不受限的客製化專屬保養。</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 右下角浮動設定按鈕 -->
+    <button onclick="requestAdminAccess()" class="fixed bottom-6 right-6 bg-slate-800 hover:bg-slate-700 transition p-4 rounded-full border-2 border-gold text-gold shadow-[0_0_15px_rgba(251,191,36,0.5)] z-40">
+        ⚙️ 經銷折扣設定
+    </button>
+
+    <!-- 隱藏的底部折扣控制面板 -->
+    <div id="adminPanel" class="hidden fixed bottom-0 left-0 w-full bg-slate-900 border-t-2 border-gold p-6 z-50 shadow-2xl transition-transform transform translate-y-0">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div class="flex items-center space-x-4">
+                <span class="text-white font-bold text-lg">目前系統授權折數：</span>
+                <span class="text-gold font-black text-3xl"><span id="discountValue">88</span>%</span>
+            </div>
+            
+            <div class="flex-1 px-8">
+                <input type="range" id="discountSlider" min="50" max="100" value="88" class="w-full h-3 bg-gray-600 rounded-lg appearance-none cursor-pointer accent-gold">
+            </div>
+            
+            <button onclick="closeAdminPanel()" class="bg-red-600 hover:bg-red-500 text-white font-bold py-2 px-6 rounded-lg transition">
+                儲存並關閉
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 設定專屬密碼
+        const AUTH_PASSWORD = "esszen888";
+
+        function requestAdminAccess() {
+            const panel = document.getElementById('adminPanel');
+            if (panel.classList.contains('hidden')) {
+                const pwd = prompt("🔒 請輸入經銷商專屬密碼以解鎖折扣設定：");
+                if (pwd === AUTH_PASSWORD) {
+                    panel.classList.remove('hidden');
+                } else if (pwd !== null) {
+                    alert("❌ 密碼錯誤，拒絕存取。");
+                }
+            } else {
+                closeAdminPanel();
+            }
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('adminPanel').classList.add('hidden');
+        }
+
+        // 監聽拉桿數值變化
+        document.getElementById('discountSlider').addEventListener('input', function(e) {
+            const currentDiscountRate = e.target.value;
+            document.getElementById('discountValue').innerText = currentDiscountRate;
+            updateAllPrices(currentDiscountRate / 100);
+        });
+
+        // 動態計算並更新畫面上的所有價錢
+        function updateAllPrices(rate) {
+            // 更新每一組右上角的價位區塊
+            document.querySelectorAll('.price-block').forEach(block => {
+                const basePrice = parseInt(block.getAttribute('data-base'));
+                const calculatedNewPrice = Math.round(basePrice * rate);
+                
+                block.querySelector('.display-base').innerText = basePrice.toLocaleString();
+                block.querySelector('.display-new').innerText = '$' + calculatedNewPrice.toLocaleString();
+            });
+
+            // 更新長條圖內的價位標籤
+            document.querySelectorAll('.bar-price-block').forEach(barBlock => {
+                const basePrice = parseInt(barBlock.getAttribute('data-base'));
+                const calculatedNewPrice = Math.round(basePrice * rate);
+                
+                barBlock.querySelector('.bar-display-new').innerText = calculatedNewPrice.toLocaleString();
+            });
+        }
+    </script>
+</body>
+</html>
